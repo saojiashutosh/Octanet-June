@@ -1,0 +1,127 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+#header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between; padding: 20px 80px;
+     background:#c3e1df;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+#navbar{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+#navbar li {
+      list-style: none;
+      padding: 0 20px;
+}
+
+#navbar li a{
+      text-decoration: none;
+      font-family:Abril Fatface;
+      font-size: 20px;
+      font-weight: 600;
+      color:#000000;
+      transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+      color:#000000;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+      content:"";
+      width: 30%;
+      height: 2px;
+      background: #6c849d;
+      bottom: -4px;
+      left: 20px;
+}
+
+  .hero {
+    background-image: url('image/hero2.png');
+    background-position: center;
+     background-size: cover;
+     height:90vh;
+     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+
+    text-align: center;
+    color: #000000;
+  }
+
+  .hero-content h1 {
+    font-family:Abril Fatface;
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+
+  .hero-content h3 {
+    font-family:Abril Fatface;
+
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+
+
+  .btn {
+    display: inline-block;
+    margin-bottom: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #555;
+  }
+
+  .features {
+    padding: 40px 0;
+    background-color:#c3e1df;
+    text-align: center;
+  }
+
+  .features h2 {
+    margin-bottom: 20px;
+  }
+
+  .feature-item {
+    display: inline-block;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .feature-item img {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
