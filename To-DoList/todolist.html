@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+  <div class="task" id="container" >
+    <h1>To-Do List</h1>
+    <div class="form-container">
+      <input type="text" id="task-input" placeholder="Enter a task and select the priority..">
+      <select id="priority-select">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <a class="btn btn-primary" type="button" herf="#" onclick="addTask()">Add</a>
+    </div>
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      var taskInput = document.getElementById("task-input");
+      var prioritySelect = document.getElementById("priority-select");
+
+      var taskText = taskInput.value;
+      var priority = prioritySelect.value;
+
+      if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      var taskList = document.getElementById("task-list");
+
+      var taskItem = document.createElement("li");
+      taskItem.className = "task-item";
+
+      var taskTextElement = document.createElement("div");
+      taskTextElement.className = "task-text";
+      taskTextElement.innerText = taskText;
+
+      var taskPriorityElement = document.createElement("div");
+      taskPriorityElement.className = "task-priority " + priority;
+      taskPriorityElement.innerText = priority;
+
+      var removeButton = document.createElement("button");
+      removeButton.innerText = "Remove";
+      removeButton.onclick = function () {
+        taskList.removeChild(taskItem);
+      };
+
+      taskItem.appendChild(taskTextElement);
+      taskItem.appendChild(taskPriorityElement);
+      taskItem.appendChild(removeButton);
+
+      taskList.appendChild(taskItem);
+
+      taskInput.value = "";
+      prioritySelect.value = "low";
+    }
+  </script>
+</body>
+</html>
